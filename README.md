@@ -1,10 +1,10 @@
-# IEx Livedev
+# Livedev
 
 Automatically recompile a mix project on file changes when running in interactive mode with IEx.
 
 ## Pre requisites
 
-IEx Livedev uses [Watchman](https://facebook.github.io/watchman/) as a file watching service. Please refer to [instalation instructions](https://facebook.github.io/watchman/docs/install.html) in Watchman's documentation for your platform. For the impatient: 
+IEx Livedev uses [Watchman](https://facebook.github.io/watchman/) as a file watching service.
 
 ### MacOS via Homebrew
 
@@ -19,6 +19,8 @@ brew install watchman
 1. Click on the last CI build
 1. Choose your platform on the left sidebar
 1. Download the binary on "Artifacts" dropdown on the top right
+
+Please refer to [instalation](https://facebook.github.io/watchman/docs/install.html) for detailed instructions.
 
 ## Installation
 
