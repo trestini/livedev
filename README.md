@@ -4,7 +4,7 @@ Automatically recompile a mix project on file changes when running in interactiv
 
 ## Pre requisites
 
-IEx Livedev uses [Watchman](https://facebook.github.io/watchman/) as a file watching service.
+Livedev uses [Watchman](https://facebook.github.io/watchman/) as a backbone for file watching service. A running Watchman deamon is required in order to use Livedev.
 
 #### Watchman install on MacOS via Homebrew
 
