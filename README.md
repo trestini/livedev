@@ -6,14 +6,14 @@ Automatically recompile a mix project on file changes when running in interactiv
 
 IEx Livedev uses [Watchman](https://facebook.github.io/watchman/) as a file watching service.
 
-### MacOS via Homebrew
+#### Watchman install on MacOS via Homebrew
 
 ```
 brew update
 brew install watchman
 ```
 
-### Linux, Windows and MacOS without homebrew
+#### Watchman binary downloads for Linux, Windows and MacOS without homebrew
 
 1. Go to [recent CI builds](https://github.com/facebook/watchman/actions?query=is%3Asuccess+event%3Apush+branch%3Amaster)
 1. Click on the last CI build
