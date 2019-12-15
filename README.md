@@ -29,7 +29,7 @@ The package can be installed by adding `livedev` to your list of dependencies in
 ```elixir
 def deps do
   [
-    {:livedev, github: "trestini/livedev"}
+    {:livedev, github: "trestini/livedev", :only :dev}
   ]
 end
 ```
