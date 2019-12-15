@@ -1,14 +1,20 @@
 defmodule Livedev do
-  import Logger, [:info]
 
   def start do
-    Supervisor.start_link([
-      {Task, fn ->
-        Logger.info "Starting Livedev"
-        socket = Livedev.Core.init_default_setup
-        Livedev.Core.watch(socket)
-      end}
-    ], strategy: :one_for_one)
+    if IEx.started? do
+      case Livedev.Core.init_default_setup do
+        {:ok, socket} ->
+          Supervisor.start_link([
+            {Task, fn () ->
+              Livedev.Core.watch(socket)
+            end}
+          ], strategy: :one_for_one)
+          :ok
+        {:error, reason} -> {:error, reason}
+      end
+    else
+      {:error, :iex_not_started}
+    end
   end
 
 end

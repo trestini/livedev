@@ -1,11 +1,13 @@
 defmodule Livedev.Core do
-  import Logger
 
   def init_default_setup do
-    %{"sockname" => path} = lookup_unix_socket()
-    {:ok, socket} = connect(path)
-    subscribe socket
-    socket
+    case lookup_unix_socket() do
+      %{"sockname" => path} ->
+        {:ok, socket} = connect(path)
+        subscribe socket
+        {:ok, socket}
+      {:error, reason} -> {:error, reason}
+    end
   end
 
   def lookup_unix_socket do
@@ -47,14 +49,13 @@ defmodule Livedev.Core do
   end
 
   def watch(socket) do
-    # Logger.info "Watching for incoming messages from Watchman"
     case receive_response(:ok, socket, 10_000) do
       {:ok, response} ->
         spawn fn -> handler(response) end
         watch(socket)
       {:error, :timeout} -> watch(socket)
       {:error, reason} ->
-        Logger.error "tcp recv error: #{reason}"
+        IO.puts(:stderr, "tcp recv error: #{reason}")
         reason
     end
   end
