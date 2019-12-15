@@ -22,12 +22,12 @@ brew install watchman
 
 ## Installation
 
-The package can be installed by adding `iex_livedev` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `livedev` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:iex_livedev, "~> 0.0.1"}
+    {:livedev, "~> 0.0.1"}
   ]
 end
 ```
@@ -48,4 +48,4 @@ Livedev.start
 
 ## Documentation
 
-The docs can be found at [https://hexdocs.pm/iex_livedev](https://hexdocs.pm/iex_livedev).
+The docs can be found at [https://hexdocs.pm/livedev](https://hexdocs.pm/livedev).
