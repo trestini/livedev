@@ -27,10 +27,12 @@ The package can be installed by adding `livedev` to your list of dependencies in
 ```elixir
 def deps do
   [
-    {:livedev, "~> 0.0.1"}
+    {:livedev, github: "trestini/livedev"}
   ]
 end
 ```
+
+> Note: The updated hex package will only be provided after initial alpha stage (version 0.1.0+)
 
 ## Usage
 
@@ -45,7 +47,3 @@ Start Livedev watching with:
 ```
 Livedev.start
 ```
-
-## Documentation
-
-The docs can be found at [https://hexdocs.pm/livedev](https://hexdocs.pm/livedev).
